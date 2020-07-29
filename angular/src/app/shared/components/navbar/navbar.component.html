@@ -1,0 +1,26 @@
+<mat-toolbar  class="position-fixed toolbarNormal">
+	<a href="#" role="button"> <img class="navbar-brand" ></a>
+	<div fxShow="true" fxHide.gt-sm="true" class="iconMenu">
+		<a *ngIf="this.currentTheme == 'light-theme'" role="button" (click)="onSetTheme('dark-theme')" mat-button><mat-icon>format_paint</mat-icon></a>
+		<a *ngIf="this.currentTheme == 'dark-theme'"  role="button" (click)="onSetTheme('light-theme')" mat-button>	<mat-icon>format_paint</mat-icon></a>
+	</div>
+	<span class="example-spacer"></span>
+	<div class="btnNavMenu" fxShow="true" fxHide.lt-md="true">
+		<div class="row" style="margin-right: 5px;">
+			<a *ngIf="this.showMenu" class="hvr-underline-from-left" role="button" (click)="scrollToSection('slider')"mat-button>Uno</a>
+			<a *ngIf="this.showMenu" class="hvr-underline-from-left" role="button" (click)="scrollToSection('text')"mat-button>Dos</a>
+			<a *ngIf="this.showMenu" class="hvr-underline-from-left" role="button" (click)="scrollToSection('news')" mat-button>Tres</a>
+			<a *ngIf="this.showMenu" class="hvr-underline-from-left" role="button" (click)="scrollToSection('players')" mat-button>Cuatro</a>
+			<a *ngIf="this.showMenu" class="hvr-underline-from-left" role="button" (click)="scrollToSection('partners')"  mat-button>Cinco</a>
+			<a *ngIf="this.showMenu" class="hvr-underline-from-left" role="button" (click)="openModal('contacto')" mat-button>Modal</a>
+			<a *ngIf="this.currentTheme == 'light-theme'" role="button" (click)="onSetTheme('dark-theme')" mat-button><mat-icon>format_paint</mat-icon></a>
+			<a *ngIf="this.currentTheme == 'dark-theme'"  role="button" (click)="onSetTheme('light-theme')" mat-button>	<mat-icon>format_paint</mat-icon></a>
+		</div>
+	</div>
+	<div fxShow="true" fxHide.gt-sm="false" style="margin-right: 5px;">
+		<button mat-icon-button type="button" (click)="toggleSidenav()">
+			<i *ngIf="this.sidenav._animationState == 'void' " class="fas fa-bars fa-2x fade-in"></i>
+			<i *ngIf="this.sidenav._animationState == 'open' " class="fas fa-times fa-2x fade-in"></i>
+		</button>
+	</div>
+</mat-toolbar>

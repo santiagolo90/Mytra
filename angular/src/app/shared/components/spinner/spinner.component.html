@@ -1,0 +1,10 @@
+<div *ngIf="tipoSpinner =='login'" class="miSpinner">
+    <p-progressSpinner [style]="{width: '150px', height: '150px'}" strokeWidth="4"> </p-progressSpinner>
+</div>
+
+<div *ngIf="tipoSpinner =='principal'" class="miSpinnerPrincipal">
+    <img class="imgLoading animation-target" src="../../../assets/LogoNav2.png" alt="logo">
+    <p></p>
+    <p-progressSpinner [style]="{width: '150px', height: '150px'}" strokeWidth="4"> </p-progressSpinner>
+
+</div>

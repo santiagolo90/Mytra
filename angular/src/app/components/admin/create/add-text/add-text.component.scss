@@ -1,0 +1,70 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.btn.btn-lg {
+    width: 163px;
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+.mat-toolbar {
+    margin: -24px;
+    margin-bottom: 0;
+    width: auto !important;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+    height: 60px !important;
+}
+
+.mat-form-field {
+    /* font-size: 14px; */
+    width: 100%;
+}
+
+.ui-datepicker-mask {
+    z-index: 999 !important;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 1rem;
+
+    flex-direction: row;
+    max-width: 600px;
+}
+.example-selected-value {
+    text-align: center !important;
+    text-transform: uppercase;
+}
+
+.mat-raised-button {
+
+    color: whitesmoke;
+}
+
+// Imagen
+
+body .ui-fileupload .ui-progressbar {
+    display: none !important;
+}
+
+body .ui-fileupload .ui-fileupload-buttonbar {
+    background-color: #ffffff;
+    padding: 0.571em 1em;
+    border: 1px solid #c8c8c8;
+    color: #333333;
+    border-bottom: 0 none;
+}

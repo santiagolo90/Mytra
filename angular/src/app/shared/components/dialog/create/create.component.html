@@ -1,0 +1,14 @@
+<mat-toolbar style="background-color:#33b5e5 !important; color: #fff !important; font-weight: bold;" >
+    <span>Agregar jugador</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="left-icon" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+  
+  
+  <div class="col-12">
+      <mat-spinner *ngIf="mostrarSpinner" style="margin:auto;margin-top:150px;" ></mat-spinner>
+      <ng-content></ng-content>
+  </div>
+

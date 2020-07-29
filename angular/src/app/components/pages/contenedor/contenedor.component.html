@@ -1,0 +1,66 @@
+
+<app-navbar [sidenav]="sidenav" [isLoggedIn]="isLoggedIn" [showMenu]="showMenu" ></app-navbar>
+<mat-sidenav-container>
+	<mat-sidenav #sidenav fixedInViewport="true"  [opened]="false">
+    <mat-nav-list>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="middle381">
+            <a class="btn381" href="#" id="social-fb">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a class="btn381" href="#" id="social-tw">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a class="btn381" href="#" id="social-ig">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <span *ngFor="let item of menu">
+        <span *ngIf="item.children && item.children.length > 0">
+          <mat-accordion>
+            <mat-expansion-panel  >
+              <mat-expansion-panel-header class="specific-class" >
+                <mat-panel-title>
+                  <!-- Cabeceras del submenu -->
+                  <div fxLayout="row" fxLayoutAlign="space-between center" > 
+                    <mat-icon class="iconMenu">{{item.iconName}}</mat-icon>
+                    {{item.displayName}}
+                  </div>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <span *ngFor="let child of item.children" (click)="navChildTo(child.route)">
+                <mat-list-item   >
+                  <!-- Entradas de cada submenú  -->
+                  <div fxLayout="row" fxLayoutAlign="space-between center"  > 
+                    <mat-icon class="iconMenu" >{{child.iconName}}</mat-icon>
+                    {{child.displayName}}
+                  </div>
+                </mat-list-item>
+              </span>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </span>
+        <span *ngIf="!item.children || item.children.length === 0"  (click)="goTo(item.route)">
+          <a mat-list-item class="hvr-underline-from-left" >
+            <mat-icon class="iconMenu">{{item.iconName}}</mat-icon>
+            {{item.displayName}}
+          </a>
+          <mat-divider></mat-divider>
+        </span>
+      </span>
+
+    </mat-nav-list>
+	</mat-sidenav>
+	<mat-sidenav-content>
+   
+
+    <div class="content">
+      <ng-content></ng-content>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,61 @@
+.cuerpo {
+    padding: 100px 0;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.example-container {
+    height: 400px;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+}
+th.mat-header-cell {
+    font-weight: bold;
+    color: black;
+}
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td,
+th {
+    width: 16%;
+}
+
+.seleccionarRow:hover {
+    background-color: #7a8b8b !important;
+    color: #ffffff;
+}
+
+.caption {
+    color: red !important;
+}
+
+.btnCSV {
+    background-color: green !important;
+    color: white !important;
+    font-weight: bold !important;
+}
+
+.btnHover:hover {
+    transform: scale(0.9);
+}
+
+.btnMenu {
+    color: black !important;
+}
+.btnMenu:hover {
+    color: black !important;
+    transform: scale(1.2);
+}
+
+.btnAdd{
+    margin-top: 15px;
+    text-align: right;
+}

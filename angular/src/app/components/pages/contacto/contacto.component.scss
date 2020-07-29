@@ -1,0 +1,288 @@
+@import "../../../variables.scss";
+
+$custom-main-color: #333333;
+$custom-label-color: #333333;
+
+.example-form {
+   // min-width: 150px;
+   // max-width: 500px;
+   color: #333333;
+   width: 100%;
+   // padding-top: 5%;
+   // padding-bottom: 5%;
+}
+
+.example-full-width {
+   width: 100%;
+}
+
+//    ::ng-deep {
+//      .mat-form-field-appearance-outline .mat-form-field-outline {
+//         color: black;
+//         background: white;
+//      }
+//      mat-form-field {
+//         .mat-hint, input, ::placeholder, .mat-form-field-label {
+//            color: black;
+//            background-color: white;
+//         }
+//      }
+//   }
+
+
+/* Estilo para input material*/
+/*
+::ng-deep {
+   // $custom-main-color: #c1c1c1;
+   // $custom-label-color: #c1c1c1;
+   // $custom-main-color: #333333;
+   // $custom-label-color: #333333;
+
+   // mat-icon-stepper selected color change
+   .mat-step-header .mat-step-icon-selected,
+   .mat-step-header .mat-step-icon-state-done,
+   .mat-step-header .mat-step-icon-state-edit {
+      background-color: #6da83c8a !important;
+   }
+
+   // input outline color
+   .mat-form-field-appearance-outline .mat-form-field-outline {
+      color: $custom-main-color !important;
+      background-color: white !important;
+   }
+
+   // mat-input focused color
+   .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+      color: $input-focus !important;
+   }
+
+   // mat-input error outline color
+   .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+      color: $input-error !important;
+      opacity: 0.8 !important;
+   }
+
+   // mat-input caret color
+   .mat-input-element {
+      caret-color: $custom-main-color !important;
+   }
+
+   // mat-input error caret color
+   .mat-form-field-invalid .mat-input-element,
+   .mat-warn .mat-input-element {
+      caret-color: $custom-main-color !important;
+   }
+
+   // mat-label normal state style
+   .mat-form-field-label {
+      color: $custom-label-color !important;
+   }
+
+   // mat-label focused style
+   .mat-form-field.mat-focused .mat-form-field-label {
+      color: $input-focus !important;
+   }
+
+   // mat-label error style
+   .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+      color: $input-error !important;
+   }
+
+   .mat-stroked-button:not([disabled]) {
+      margin-top: 5%;
+      padding-top: 3%;
+      padding-bottom: 3%;
+      width: 50%;
+      border-color: $custom-main-color !important;
+      color: $custom-main-color !important;
+   }
+
+   .mat-stroked-button[disabled][disabled] {
+      margin-top: 5%;
+      padding-top: 3%;
+      padding-bottom: 3%;
+      width: 50%;
+      color: rgba(0, 0, 0, 0.26) !important;
+   }
+
+}
+*/
+
+
+.tituloContacto {
+   font-size: 25px;
+   font-weight: 800;
+   margin-top: 5%;
+   letter-spacing: 2px;
+   text-align: left !important;
+   color: $main-color-black;
+}
+
+.textosContactos {
+   font-size: 19px;
+   font-weight: 800;
+   margin-top: 5%;
+   letter-spacing: 2px;
+   text-align: center !important;
+   color: $main-color-black;
+}
+
+@media screen and (max-width: 767px) {
+   .textosContactos {
+      font-size: 25px;
+   }
+}
+
+@keyframes spinner {
+   to {
+      transform: rotate(360deg);
+   }
+}
+
+.spinner:before {
+   content: "";
+   box-sizing: border-box;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   width: 25px;
+   height: 25px;
+   margin-top: -10px;
+   margin-left: -10px;
+   border-radius: 50%;
+   border: 4px solid #ffffff;
+   border-top-color: $main-color;
+   animation: spinner 0.8s linear infinite;
+}
+
+//navbar dialogo
+.mat-toolbar {
+   margin: -24px;
+   margin-bottom: 0;
+   width: auto !important;
+
+   // background:url('../../../../assets/bg-01.jpg') ;
+   // background-repeat: no-repeat;
+   // background-size: cover;
+   // background-position: center;
+   // height: 100%;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+   height: 60px !important;
+}
+.btnCloseSpacer {
+   flex: 1 1 auto;
+}
+
+.text-center h2 {
+   // margin-bottom: 30px;
+   font-weight: 800;
+   // font-size: 30px;
+   color: $main-color-black;
+}
+.text-center h2:after {
+   content: " ";
+   width: 100px;
+   height: 5px;
+   background: $main-color-black;
+   display: block;
+   margin-top: 10px;
+   border-radius: 3px;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+/*
+MODAL
+PARA NUEVO MODAL CONTACTO 
+*/
+
+.col-md-3 {
+   background: $main-color-black;
+   padding: 4%;
+}
+
+
+.contact-info {
+   margin-top: 10%;
+}
+.contact-info img {
+   margin-bottom: 15%;
+}
+.contact-info h2 {
+   margin-bottom: 10%;
+}
+.col-md-9 {
+   background: #fff;
+   //padding-right: 3%;
+   padding-left: 3%;
+   padding-top: 8%;
+   padding-bottom: 8%;
+   border-top-right-radius: 0.5rem;
+   border-bottom-right-radius: 0.5rem;
+}
+.contact-form label {
+   font-weight: 600;
+}
+.contact-form button {
+   background: #25274d;
+   color: #fff;
+   font-weight: 600;
+   width: 25%;
+}
+.contact-form button:focus {
+   box-shadow: none;
+}
+.btnClose {
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 5px;
+   line-height: 14px;
+   min-width: auto;
+   color: black;
+}
+
+//PARA NUEVO MODAL CONTACTO
+::ng-deep.dialogContact .mat-dialog-container {
+   padding: 0;
+   background-color: #1d1d1b !important ;
+   color: #6fa83d !important ;
+}
+
+::ng-deep.dialogContact{
+   .mat-flat-button,	
+   .mat-stroked-button:not([disabled]) {
+      margin-top: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width: 30%;
+      // border-color: rgb(76, 128, 31) !important;
+      // color: rgb(76, 128, 31) !important;
+   }
+   .mat-flat-button:not([disabled]){
+      background-color: #6fa83d;
+      color: white !important;
+      // border-color: $custom-main-color !important;
+      // color: $custom-main-color !important;
+  }
+   .mat-flat-button,	
+   .mat-stroked-button[disabled][disabled] {
+      margin-top: 5%;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      width: 30%;
+      color: rgba(0, 0, 0, 0.26) !important;
+   }
+}
+
+
+
+
+// ::ng-deep.dialogContact {
+//    padding: 0;
+//    background-color: #1d1d1b !important ;
+//    color: #6fa83d !important ;
+// }

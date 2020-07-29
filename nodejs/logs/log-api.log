@@ -1,0 +1,4 @@
+[2020-07-27T12:50:41.343Z] info {"code":-1,"data":"No se encontraron jugadores","error":{"code":"ERR_HTTP_HEADERS_SENT"}}
+[2020-07-27T15:46:24.878Z] info {"code":-1,"data":"No se encontraron jugadores","error":{"code":"ERR_HTTP_HEADERS_SENT"}}
+[2020-07-27T15:50:10.604Z] info {"code":-1,"data":"No se encontraron sliders","error":{"code":"ERR_HTTP_HEADERS_SENT"}}
+[2020-07-27T15:50:14.484Z] info {"code":-1,"data":"No se encontraron sliders","error":{"code":"ERR_HTTP_HEADERS_SENT"}}

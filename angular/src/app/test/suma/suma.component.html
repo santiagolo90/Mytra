@@ -1,0 +1,27 @@
+<div class="container">
+    <h2 id="title">
+        Angular SumApp
+    </h2>
+    <p id="description">
+        Esta (app) suma
+    </p>
+    <span> Número 1: </span> <input type="number" #num1 id="num1"> +
+    <span> Número 2: </span> <input type="number" #num2 id="num2">
+    
+    <br><br><br>
+
+    <button (click)="printAdd(num1.value, num2.value)" #calc id="calc" >Sumar</button>
+
+    <br><br><br>
+
+    Resultado: <input #result id="result" type="text">
+
+</div>
+
+<br><br><br>
+
+<div style="text-align: center;" class="e2eTest">
+    <input  #inputText id="inputText" type="text">
+    <button id="btnText" (click)="getName()"> Add name</button>
+    <p id="msg">Hola {{name}} </p>
+</div>

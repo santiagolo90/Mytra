@@ -1,0 +1,115 @@
+<app-contenedor>
+    <div class="container">
+        <div class="cuerpo">
+            <mat-spinner *ngIf="mostrarSpinner" style="margin:auto;margin-top:150px;"></mat-spinner>
+            <div *ngIf="!mostrarSpinner" class="">
+                <p-table class="" #dt [value]="allMsj" [columns]="selectedColumns"
+                    [resizableColumns]="true" [responsive]="true" [loading]="loading">
+                    <ng-template class="filtrosTablaPNG" pTemplate="caption">
+                        LISTADO DE MENSAJES
+                        <mat-accordion>
+                            <mat-expansion-panel [expanded]="true" (opened)="this.panelOpenState = true"
+                                (closed)="this.panelOpenState = false">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        Filtros
+                                    </mat-panel-title>
+                                    <mat-panel-description>
+                                        Click aca para {{panelOpenState ? 'cerrar' : 'abrir'}}
+                                    </mat-panel-description>
+                                </mat-expansion-panel-header>
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field appearance="outline">
+                                            <mat-select placeholder="Seleccionar Columnas" [(ngModel)]="selectedColumns"
+                                                multiple>
+                                                <mat-select-trigger>
+                                                    {{selectedColumns.length + " " + "Columnas seleccionadas"}}
+                                                </mat-select-trigger>
+                                                <mat-option *ngFor="let col of cols" [value]="col">{{col.header}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col">
+                                        <app-search [texto]="FILTO_GLOBAL" (searchGlobal) = "globalSearch($event)"></app-search>
+                                    </div>
+                                </div>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                        <br>
+                    </ng-template>
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th pResizableColumn *ngFor="let col of columns" [pSortableColumn]="col.field">
+                                {{col.header}}
+                                <p-sortIcon [field]="col.field" ariaLabel="Activate to sort"
+                                    ariaLabelDesc="Activate to sort in descending order"
+                                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th *ngFor="let col of columns" [ngSwitch]="col.field" style="text-align: center;">
+                                <app-search [texto]="FILTRO_NOMBRE" *ngSwitchCase="'nombre'" #filtroNombre (click) = cleanInputs(); (searchGlobal) = "searchWithFilters($event,'name')"></app-search>
+                                <app-search [texto]="FILTRO_APELLIDO" *ngSwitchCase="'apellido'" #filtroApellido  (click) = cleanInputs(); (searchGlobal) = "searchWithFilters($event,'surname')"></app-search>
+                                <app-search [texto]="FILTRO_EMAIL" *ngSwitchCase="'email'" #filtroEmail  (click) = cleanInputs();  (searchGlobal) = "searchWithFilters($event,'email')"></app-search>
+                                <app-search [texto]="FILTRO_TELEFONO" *ngSwitchCase="'telefono'" #filtroTelefono  (click) = cleanInputs();  (searchGlobal) = "searchWithFilters($event, 'phone')"></app-search>
+                                <app-search [texto]="FILTRO_MENSAJE" *ngSwitchCase="'mensaje'" #filtroMensaje  (click) = cleanInputs();  (searchGlobal) = "searchWithFilters($event ,'message')"></app-search>
+                                <button *ngSwitchCase="'action'" (click)="openModal()" mat-mini-fab color="primary" >
+                                    <mat-icon>plus_one</mat-icon>
+                                </button>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-columns="columns">
+                        <tr class="seleccionarRow">
+                            <td  *ngFor="let col of columns ">
+                                <div *ngIf="col.field !== 'mensaje' && col.field !== 'ruta'">
+                                    <span class="ui-column-title">{{col.header}}</span>
+                                    {{rowData[col.field]  }}
+                                </div>
+                                <div *ngIf="col.field == 'mensaje'">
+                                    <span class="ui-column-title">{{col.header}}</span>
+                                    {{ (rowData[col.field].length> 50)? (rowData[col.field] | slice:0:50)+'...':(rowData[col.field]) }}
+
+                                </div>
+                                <div *ngIf="col.field == 'ruta'">
+                                    <span class="ui-column-title">{{col.header}}</span>
+                                    <img [src]="rowData[col.field]" alt="img" style="width: 50px;">
+                                </div>
+                                <div style="text-align: center;" *ngIf="col.header == 'action'">
+                                    <span class="ui-column-title">{{col.header}}</span>
+                                    <button mat-icon-button [matMenuTriggerFor]="menuTable">
+                                        <mat-icon><i class="fas fa-ellipsis-h btnMenu"></i></mat-icon>
+                                    </button>
+                                    <mat-menu #menuTable="matMenu">
+                                        <button mat-menu-item  class="btnHover">
+                                            <i style="color: #ff4444 !important;" class="far fa-trash-alt fa-lg"> </i>
+                                            <span> Borrar mensaje</span>
+                                        </button>
+                                    </mat-menu>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                <mat-paginator
+                (page)="onPaginate($event)"
+                [length]="this.totalDocs"
+                [pageSize]="this.pagination"
+                [pageIndex]="this.page -1"
+                [pageSizeOptions]="[5, 10, 20, 30]"
+                showFirstLastButtons>
+                </mat-paginator>
+                <div class="btnAdd">
+                    <button (click)="openModal()" mat-mini-fab color="primary" >
+                        <mat-icon>plus_one</mat-icon>
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</app-contenedor>

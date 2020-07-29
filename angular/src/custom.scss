@@ -1,0 +1,697 @@
+@import "~@angular/material/theming";
+@import "./app/variables.scss";
+
+@include mat-core();
+
+//dark theme.
+$light-primary: mat-palette($mat-light-blue, A700);
+$light-accent: mat-palette($mat-gray, 50);
+$light-warn: mat-palette($mat-red);
+
+//dark theme.
+$dark-primary: mat-palette($mat-green, 600);
+$dark-accent: mat-palette($mat-gray, 900);
+$dark-warn: mat-palette($mat-deep-orange);
+
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+@include angular-material-theme($light-theme);
+
+.light-theme {
+    transition: 0.3s ease all !important;
+    // @include angular-material-theme($light-theme);
+    // @include angular-material-color($light-theme);
+
+    //background-color: #fff;
+    //color: #212121;
+    .body {
+        transition: 0.3s ease all;
+        background-color: $fondo-light;
+        color: $main-color-black;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------MATERIAL--------------------*/
+    /*----------------------------------------------*/
+
+    .mat-nav-list .mat-list-item {
+        color: $main-color-black;
+    }
+    .iconMenu {
+        color: $main-color-black;
+    }
+
+    
+
+    .hvr-underline-from-left:before {
+        background: $main-color-black;
+    }
+    .mat-expansion-panel-header-title,
+    .mat-expansion-panel-header-description {
+        color: $main-color-black;
+    }
+
+    .specific-class > .mat-expansion-indicator:after {
+        color: $main-color-black;
+    }
+    .mat-paginator-container {
+        transition: 0.3s ease all;
+        border-left: 1px solid #c8c8c8;
+        border-right: 1px solid #c8c8c8;
+        border-bottom: 1px solid #c8c8c8;
+        
+    }
+
+    /*----------------------------------------------*/
+    /*-----Estilo para input material---------------*/
+    /*----------------------------------------------*/
+    .contactoSeccion {
+        transition: 0.3s ease all;
+        $custom-main-color: #c1c1c1;
+        $custom-label-color: #c1c1c1;
+        $custom-main-color: #333333;
+        $custom-label-color: #333333;
+
+        // mat-icon-stepper selected color change
+        .mat-step-header .mat-step-icon-selected,
+        .mat-step-header .mat-step-icon-state-done,
+        .mat-step-header .mat-step-icon-state-edit {
+            background-color: #6da83c8a !important;
+        }
+
+        // input outline color
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+            color: $custom-main-color !important;
+            background-color: white !important;
+        }
+
+        // mat-input focused color
+        .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+            color: $input-focus !important;
+        }
+
+        // mat-input error outline color
+        .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+            color: $input-error !important;
+            opacity: 0.8 !important;
+        }
+
+        // mat-input caret color
+        .mat-input-element {
+            caret-color: $custom-main-color !important;
+        }
+
+        // mat-input error caret color
+        .mat-form-field-invalid .mat-input-element,
+        .mat-warn .mat-input-element {
+            caret-color: $custom-main-color !important;
+        }
+
+        // mat-label normal state style
+        .mat-form-field-label {
+            color: $custom-label-color !important;
+        }
+
+        // mat-label focused style
+        .mat-form-field.mat-focused .mat-form-field-label {
+            color: $input-focus !important;
+        }
+
+        // mat-label error style
+        .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+            color: $input-error !important;
+        }
+
+        .mat-stroked-button:not([disabled]) {
+            margin-top: 5%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            width: 50%;
+            border-color: $custom-main-color !important;
+            color: $custom-main-color !important;
+        }
+
+        .mat-stroked-button[disabled][disabled] {
+            margin-top: 5%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            width: 50%;
+            color: rgba(0, 0, 0, 0.26) !important;
+        }
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------NAVBAR--------------------*/
+    /*----------------------------------------------*/
+    .mat-icon-button i,
+    .mat-icon-button .mat-icon {
+        color: $main-color-black;
+    }
+
+    .btnNavMenu .row > a {
+        color: $main-color-black;
+    }
+    .navbar-brand {
+        transition: 0.3s ease all;
+        content: url("/assets/LogoNav_Black.png");
+    }
+    .mat-drawer-inner-container {
+        background: #fafafa;
+    }
+
+    // .toolbarNormal {
+
+    //     background-color: $main-color-black !important;
+    //   }
+
+    /*----------------------------------------------*/
+    /*--------------------JUGADORES--------------------*/
+    /*----------------------------------------------*/
+
+    .textoJugadores {
+        color: $main-color-black;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------SLIDER--------------------*/
+    /*----------------------------------------------*/
+    .flechaCarrusel {
+        background: #fafafab5;
+        color: $main-color-black !important;
+        border-radius: 22px;
+        width: 40px;
+    }
+    .textoIMG {
+        top: 100px;
+        color: #b5b5b5;
+    }
+
+    .boxImg {
+        background-color: #00000099;
+        border-left: 6px solid #b5b5b5;
+    }
+    .progress {
+        background: #b5b5b5;
+    }
+
+    .fondoGeneral {
+        background-color: #fafafab5;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------TEXTOS--------------------*/
+    /*----------------------------------------------*/
+    .about-sec {
+        color: $main-color-black;
+    }
+    .about-sec:before {
+        background: #fafafab5;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------NEWS--------------------*/
+    /*----------------------------------------------*/
+
+    .mat-card {
+        // background-color: $main-color-black;
+        color: $main-color-black;
+        // border-style: solid;
+        // border-width: 1px;
+        // border-radius: 10px;
+        // border-color: $main-color-black;
+        // border:solid 7px #41403E;
+    }
+
+    .newTitle {
+        color: $main-color-black;
+        font-weight: bold;
+    }
+
+    .newSubTitle {
+        color: $main-color-black;
+    }
+
+    .btnImgCard {
+        // color: #fafafab5;
+        color: $main-color-black;
+        background-color: #eeeeee;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------FOOTER--------------------*/
+    /*----------------------------------------------*/
+
+    footer {
+        background-color: #e0e0e0;
+        color: $main-color-black;
+    }
+    .footer-copyright {
+        background-color: #bdbdbd;
+        color: $main-color-black;
+    }
+    .copyright {
+        color: $main-color-black;
+        text-decoration: none;
+    }
+    .copyright:hover,
+    .copyright:focus,
+    .copyright:active {
+        color: $main-color-black;
+        text-decoration: none;
+    }
+    .copyright > i:hover {
+        color: $main-color-black;
+        text-decoration: none;
+    }
+
+    /*MODAL*/
+}
+
+.dark-theme {
+    transition: 0.3s ease all !important;
+    @include angular-material-theme($dark-theme);
+    // @include angular-material-color($dark-theme);
+
+    //MATERIAL
+    //ALTO.
+    .body {
+        transition: 0.3s ease all;
+        background-color: $fondo-dark;
+        color: $main-color;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------MATERIAL-------------------*/
+    /*----------------------------------------------*/
+    //Color text placeholder
+    // .mat-form-field-label {
+    //     color: $main-color;
+    // }
+    .mat-drawer {
+        background-color: #212121 !important;
+    }
+    .mat-expansion-panel {
+        background: #212121 !important;
+    }
+    .mat-nav-list .mat-list-item {
+        color: $main-color;
+    }
+    .iconMenu {
+        color: $main-color;
+    }
+
+    .hvr-underline-from-left:before {
+        background: $main-color;
+    }
+    .mat-expansion-panel-header-title,
+    .mat-expansion-panel-header-description {
+        color: $main-color;
+    }
+
+    .specific-class > .mat-expansion-indicator:after {
+        color: $main-color;
+    }
+    .mat-paginator-container {
+        transition: 0.3s ease all;
+        border-left: 1px solid rgba(255, 255, 255, 0.7);
+        border-right: 1px solid rgba(255, 255, 255, 0.7);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+        color: $main-color;
+    }
+
+    /*----------------------------------------------*/
+    /*-----Estilo para input material---------------*/
+    /*----------------------------------------------*/
+    .contactoSeccion {
+        transition: 0.3s ease all;
+        $custom-main-color: #c1c1c1;
+        $custom-label-color: #c1c1c1;
+        $custom-main-color: #333333;
+        $custom-label-color: #333333;
+
+        // mat-icon-stepper selected color change
+        .mat-step-header .mat-step-icon-selected,
+        .mat-step-header .mat-step-icon-state-done,
+        .mat-step-header .mat-step-icon-state-edit {
+            background-color: #6da83c8a !important;
+        }
+
+        // input outline color
+        .mat-form-field-appearance-outline .mat-form-field-outline {
+            color: $custom-main-color !important;
+            background-color: white !important;
+        }
+
+        // mat-input focused color
+        .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+            color: $input-focus !important;
+        }
+
+        // mat-input error outline color
+        .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick {
+            color: $input-error !important;
+            opacity: 0.8 !important;
+        }
+
+        // mat-input caret color
+        .mat-input-element {
+            caret-color: $custom-main-color !important;
+        }
+
+        // mat-input error caret color
+        .mat-form-field-invalid .mat-input-element,
+        .mat-warn .mat-input-element {
+            caret-color: $custom-main-color !important;
+        }
+
+        // mat-label normal state style
+        .mat-form-field-label {
+            color: $custom-label-color !important;
+        }
+
+        // mat-label focused style
+        .mat-form-field.mat-focused .mat-form-field-label {
+            color: $input-focus !important;
+        }
+
+        // mat-label error style
+        .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+            color: $input-error !important;
+        }
+
+        .mat-stroked-button:not([disabled]) {
+            margin-top: 5%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            width: 50%;
+            border-color: $custom-main-color !important;
+            color: $custom-main-color !important;
+        }
+
+        .mat-stroked-button[disabled][disabled] {
+            margin-top: 5%;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            width: 50%;
+            color: rgba(0, 0, 0, 0.26) !important;
+        }
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------NAVBAR--------------------*/
+    /*----------------------------------------------*/
+
+    .toolbarNormal {
+        transition: 0.3s ease all;
+        background-color: $main-color-black;
+    }
+
+    .mat-icon-button i,
+    .mat-icon-button .mat-icon {
+        color: $main-color;
+    }
+
+    .btnNavMenu .row > a {
+        color: $main-color;
+    }
+    .navbar-brand {
+        transition: 0.3s ease all;
+        content: url("/assets/LogoNav2.png");
+    }
+    .menuMaterial {
+        color: $main-color;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------SLIDER--------------------*/
+    /*----------------------------------------------*/
+    .flechaCarrusel {
+        background: transparent !important;
+        color: $main-color !important;
+    }
+
+    .textoIMG {
+        top: 100px;
+        color: $main-color;
+    }
+
+    .boxImg {
+        background-color: #00000099;
+        border-left: 6px solid $main-color;
+    }
+    .progress {
+        background: $main-color;
+    }
+
+    .fondoGeneral {
+        background-color: whitesmoke;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------TEXTOS--------------------*/
+    /*----------------------------------------------*/
+
+    .about-sec {
+        color: $main-color;
+    }
+    .about-sec:before {
+        background: #1d1d1bf0;
+    }
+    /*----------------------------------------------*/
+    /*--------------------JUGADORES--------------------*/
+    /*----------------------------------------------*/
+
+    .textoJugadores {
+        color: $main-color-black;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------NEWS--------------------*/
+    /*----------------------------------------------*/
+
+    .mat-card {
+        background-color: $main-color-black;
+        color: $main-color;
+        // border-style: solid;
+        // border-width: 1px;
+        // border-radius: 10px;
+        // border-color: $main-color;
+    }
+
+    .fondoGeneralNews {
+        // background-color: #424242;
+        background-color: #1d1d1bf0;
+    }
+
+    .newTitle {
+        color: $main-color;
+        font-weight: bold;
+    }
+
+    .newSubTitle {
+        color: $main-color;
+    }
+
+    .btnImgCard {
+        color: #eeeeee;
+        background-color: $main-color-hover;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------FOOTER--------------------*/
+    /*----------------------------------------------*/
+
+    footer {
+        background-color: #292927;
+        color: $main-color;
+    }
+    .footer-copyright {
+        background-color: $main-color-black;
+        color: $main-color;
+    }
+    .copyright {
+        color: $main-color;
+        text-decoration: none;
+    }
+    .copyright:hover,
+    .copyright:focus,
+    .copyright:active {
+        color: $main-color;
+        text-decoration: none;
+    }
+    .copyright > i:hover {
+        color: $main-color;
+        text-decoration: none;
+    }
+
+    /*----------------------------------------------*/
+    /*--------------------PRIMENG--------------------*/
+    /*----------------------------------------------*/
+    .ui-fileupload .ui-fileupload-buttonbar {
+        background-color: #424242;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .ui-fileupload .ui-fileupload-content {
+        background-color: #424242;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        color: rgba(255, 255, 255, 0.7);
+    }
+    .ui-table .ui-table-caption,
+    body .ui-table .ui-table-summary {
+        background-color: #212121;
+        color: $main-color;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .ui-table .ui-table-thead > tr > th {
+        border: 1px solid rgba(255, 255, 255, 0.7);
+        color: $main-color;
+        background-color: #303030;
+    }
+    .ui-table .ui-table-tbody > tr {
+        background-color: #303030;
+        color: $main-color;
+    }
+    .ui-table .ui-table-tbody > tr:hover {
+        color: $main-color-black;
+    }
+    .ui-table .ui-table-tbody > tr:hover {
+        color: black;
+    }
+
+    .ui-table-tbody {
+        color: $main-color !important;
+    }
+
+    .ui-table .ui-table-tbody > tr:nth-child(even) {
+        background-color: #4a4a4a;
+    }
+    .ui-paginator {
+        background-color: #4a4a4a;
+    }
+    .ui-paginator .ui-paginator-first,
+    .ui-paginator .ui-paginator-prev,
+    .ui-paginator .ui-paginator-next,
+    .ui-paginator .ui-paginator-last {
+        color: #79ff09;
+    }
+    .ui-table .ui-table-summary {
+        background-color: #4a4a4a;
+    }
+
+    .ui-widget-overlay {
+        background-color: $main-color;
+    }
+}
+
+/* HOVER LINE Efecto
+.mat-card {
+    background-color: $main-color-black;
+
+    background: none;
+    border: 0;
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em 2em;
+
+    box-shadow: inset 0 0 0 2px $main-color;
+    color: $main-color;
+    font-size: inherit;
+    font-weight: 700;
+
+    position: relative;
+    vertical-align: middle;
+
+    &::before,
+    &::after {
+        box-sizing: inherit;
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+
+
+.draw {
+    transition: color 0.25s;
+
+    &::before,
+    &::after {
+        // Set border to invisible, so we don't see a 4px border on a 0x0 element before the transition starts
+        border: 2px solid transparent;
+        width: 0;
+        height: 0;
+    }
+
+    // This covers the top & right borders (expands right, then down)
+    &::before {
+        top: 0;
+        left: 0;
+    }
+
+    // And this the bottom & left borders (expands left, then up)
+    &::after {
+        bottom: 0;
+        right: 0;
+    }
+
+    &:hover {
+        color: $main-color-hover;
+    }
+
+    // Hover styles
+    &:hover::before,
+    &:hover::after {
+        width: 100%;
+        height: 100%;
+    }
+
+    &:hover::before {
+        border-top-color: $main-color-hover; // Make borders visible
+        border-right-color: $main-color-hover;
+        transition: width 0.25s ease-out,
+            // Width expands first
+                height 0.25s ease-out 0.25s; // And then height
+    }
+
+    &:hover::after {
+        border-bottom-color: $main-color-hover; // Make borders visible
+        border-left-color: $main-color-hover;
+        transition: border-color 0s ease-out 0.5s,
+            // Wait for ::before to finish before showing border
+                width 0.25s ease-out 0.5s,
+            // And then exanding width
+                height 0.25s ease-out 0.75s; // And finally height
+    }
+}
+
+// Inherits from .draw
+.meet {
+    &:hover {
+        color: $main-color-hover;
+    }
+
+    // Start ::after in same position as ::before
+    &::after {
+        top: 0;
+        left: 0;
+    }
+
+    // Change colors
+    &:hover::before {
+        border-top-color: $main-color-hover;
+        border-right-color: $main-color-hover;
+    }
+
+    &:hover::after {
+        border-bottom-color: $main-color-hover;
+        border-left-color: $main-color-hover;
+        transition: height 0.25s ease-out, width 0.25s ease-out 0.25s;
+    }
+}
+*/
